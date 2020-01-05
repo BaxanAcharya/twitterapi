@@ -13,8 +13,6 @@ var PostController=require('./controllers/PostController.js');
 var app1 = test()
 app1.use(bodyParser.urlencoded({extended:true}))
 
-
-
 app1.post('/profile', upload.single	('avatar'), ImageController.insertImage)
 
 app1.post('/login',AuthController.validtor,AuthController.passwordCheck, AuthController.jwtTokenGen)

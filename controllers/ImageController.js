@@ -1,10 +1,8 @@
 
-function insertImage(req,res,next)
+function insertImage(req,res)
 {
-    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-        return cb(new Error("You can upload only image files!"), false);
-    }
-
+    //console.log(req.file.filename)
+    res.json(req.file)
 }
 
 
