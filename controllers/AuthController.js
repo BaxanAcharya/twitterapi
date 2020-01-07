@@ -68,8 +68,10 @@ function verifyToken(req,res,next){
 	var token = req.headers.authorization.slice(7,req.headers.authorization.length)
 
 	jwt.verify(token,'thisisSecretKey',function(err,result){
+		
 		if(!result===null)
 		{
+			
 			next()
 		}
 		else{

@@ -1,5 +1,6 @@
 
 var db = require('../config/dbConfig.js');
+var userModel = require('./UserModel.js');
 
 var post = db.sequelize.define('post',
 {
@@ -39,6 +40,8 @@ date:{
 	paranoid:true
 }
 )
+
+userModel.user.hasMany(post);
 post.sync({force:false})
 .then(() => {
     console.log('Post table has been created');
